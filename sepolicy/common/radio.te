@@ -1,6 +1,9 @@
 # Talks to qmuxd via the qmux_radio socket.
 qmux_socket(radio);
 
+# Talks to dbus
+unix_socket_connect(radio, dbus_daemon, dbus_daemon)
+
 #Need permission to execute com.qualcomm.qti.telephony/app_dex/xx
 allow radio radio_data_file:file x_file_perms;
 
