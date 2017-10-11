@@ -1,0 +1,21 @@
+# rmtfsd - remote fs daemon (open source replacement for rmt_storage)
+type rmtfsd, domain;
+type rmtfsd_exec, exec_type, file_type;
+init_daemon_domain(rmtfsd)
+
+allow rmtfsd {
+    modem_efs_partition_device
+    root_block_device
+    ssd_device
+}:blk_file rw_file_perms;
+allow rmtfsd block_device:dir r_dir_perms;
+
+allow rmtfsd self:capability {
+    net_raw
+    setuid
+    setgid
+    dac_override
+};
+
+allow rmtfsd self:socket create_socket_perms;
+allow rmtfsd uio_device:chr_file rw_file_perms;
