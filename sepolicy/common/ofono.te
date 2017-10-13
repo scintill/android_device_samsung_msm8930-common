@@ -2,7 +2,7 @@ type ofono, domain;
 type ofono_exec, exec_type, file_type;
 
 init_daemon_domain(ofono)
-qmux_socket(ofono);
+allow ofono smd_device:chr_file rw_file_perms;
 unix_socket_connect(ofono, dbus_daemon, dbus_daemon)
 
 allow ofono radio_data_file:dir create_dir_perms;

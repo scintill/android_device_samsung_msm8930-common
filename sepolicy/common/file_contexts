@@ -226,7 +226,6 @@
 /system/vendor/bin/mdtpd                        u:object_r:mdtpdaemon_exec:s0
 /system/bin/dbus-daemon                         u:object_r:dbus_daemon_exec:s0
 /system/bin/ofonod                              u:object_r:ofono_exec:s0
-/system/bin/qmiserial2qmuxd                     u:object_r:ofono_exec:s0
 
 ###################################
 # sysfs files
